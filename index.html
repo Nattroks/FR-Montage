@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FR Montage</title>
+  <style>
+    /* Reset & base */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0f0f0f;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      background-color: #222;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+      animation: slideDown 0.7s ease forwards;
+    }
+
+    nav .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #00ffcc;
+      cursor: default;
+      user-select: none;
+      animation: fadeIn 1.2s ease forwards;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      padding: 0;
+      margin: 0;
+      animation: fadeIn 1.5s ease forwards;
+    }
+
+    nav ul li {
+      margin-left: 20px;
+    }
+
+    nav ul li a {
+      color: #00ffcc;
+      text-decoration: none;
+      transition: color 0.3s;
+      font-weight: 600;
+      position: relative;
+    }
+
+    nav ul li a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: #00ffcc;
+      transition: width 0.3s;
+    }
+
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+
+    nav ul li a:hover {
+      color: #00ddbb;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8em;
+      cursor: pointer;
+      color: #00ffcc;
+      user-select: none;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        background-color: #222;
+        animation: fadeIn 0.5s ease forwards;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      nav ul li {
+        margin: 15px 0;
+        text-align: center;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    /* HEADER */
+    header {
+      background-color: #1e1e1e;
+      padding: 40px 20px;
+      text-align: center;
+      animation: fadeInUp 1.2s ease forwards;
+      border-bottom: 2px solid #00ffcc;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 3em;
+      color: #00ffcc;
+      letter-spacing: 2px;
+      text-shadow: 0 0 8px #00ffcc;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1.2em;
+      color: #66fff0;
+      font-style: italic;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 50px 20px;
+      max-width: 900px;
+      margin: auto;
+      animation: fadeInUp 1.5s ease forwards;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      color: #00ffcc;
+      animation: pulse 3s infinite;
+    }
+
+    .hero h2 {
+      font-size: 2.5em;
+      margin-bottom: 15px;
+      text-shadow: 0 0 8px #00ffcc;
+    }
+
+    .hero p {
+      font-size: 1.3em;
+      font-weight: 600;
+      color: #66fff0;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.5em;
+    }
+
+    /* Lists */
+    .services ul, .pricing ul {
+      list-style: none;
+      padding: 0;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    .services li, .pricing li {
+      background: #1a1a1a;
+      padding: 15px 20px;
+      margin: 15px 0;
+      border-left: 6px solid #00ffcc;
+      font-size: 1.1em;
+      box-shadow: 0 0 8px #00ffcc33;
+      transition: transform 0.3s ease;
+      cursor: default;
+    }
+
+    .services li:hover, .pricing li:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 15px #00ffccaa;
+    }
+
+    /* Form */
+    form {
+      background: #1a1a1a;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #00ffcc44;
+      max-width: 600px;
+      margin: auto;
+      animation: fadeInUp 2s ease forwards;
+    }
+
+    form input, form select, form textarea {
+      width: 100%;
+      margin-bottom: 20px;
+      padding: 15px;
+      border: none;
+      border-radius: 8px;
+      background-color: #2a2a2a;
+      color: #fff;
+      font-size: 1em;
+      transition: box-shadow 0.3s;
+    }
+
+    form input:focus, form select:focus, form textarea:focus {
+      outline: none;
+      box-shadow: 0 0 10px #00ffcc;
+      background-color: #222;
+    }
+
+    form button {
+      background-color: #00ffcc;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 10px;
+      color: #000;
+      font-weight: 700;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    form button:hover {
+      background-color: #00ddbb;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #1e1e1e;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #666;
+      user-select: none;
+      animation: fadeIn 1.5s ease forwards;
+    }
+
+    /* Animations */
+
+    @keyframes fadeIn {
+      0% {opacity: 0;}
+      100% {opacity: 1;}
