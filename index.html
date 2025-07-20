@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FR Montage Animé</title>
+  <style>
+    /* Styles globaux */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f0f0f, #222233);
+      color: #fff;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #1e1e1e;
+      animation: fadeInDown 1s ease forwards;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      color: #00ffcc;
+      animation: pulse 2s infinite;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1.2em;
+      color: #aaffcc;
+    }
+
+    nav {
+      background-color: #222;
+      display: flex;
+      justify-content: center;
+      padding: 12px 0;
+      animation: slideInLeft 1s ease forwards;
+    }
+
+    nav a {
+      color: #00ffcc;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #00b3a6;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      animation: fadeIn 1.2s ease forwards;
+    }
+
+    h2 {
+      border-left: 5px solid #00ffcc;
+      padding-left: 10px;
+      margin-bottom: 20px;
+      color: #00ffcc;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      background: #1a1a1a;
+      margin-bottom: 15px;
+      padding: 15px;
+      border-left: 5px solid #00ffcc;
+      transition: background 0.3s;
+    }
+
+    li:hover {
+      background-color: #003333;
+    }
+
+    form {
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #2a2a2a;
+      color: #fff;
+    }
+
+    button {
+      background-color: #00ffcc;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      color: #000;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #00b3a6;
+      color: #fff;
+    }
+
+    footer {
+      background-color: #1e1e1e;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #999;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes fadeInDown {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes slideInLeft {
+      from {opacity: 0; transform: translateX(-50px);}
+      to {opacity: 1; transform: translateX(0);}
+    }
+
+    @keyframes pulse {
+      0%, 100% {text-shadow: 0 0 10px #00ffcc;}
+      50% {text-shadow: 0 0 20px #00ffcc;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>FR Montage</h1>
+    <p>Montage vidéo, miniatures, bannières et plus</p>
+  </header>
+
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#pricing">Tarifs</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="services">
+    <h2>Mes Services</h2>
+    <ul>
+      <li>🎬 Montage vidéo YouTube, TikTok, Reels</li>
+      <li>🖼️ Création de miniatures YouTube percutantes</li>
+      <li>🎨 Design de bannières pour chaînes ou réseaux</li>
+      <li>🧑‍🎨 Photos de profil stylisées pour tes réseaux</li>
+    </ul>
+  </section>
+
+  <section id="portfolio">
+    <h2>Portfolio</h2>
+    <p>Quelques exemples de mes réalisations viendront ici.</p>
+  </section>
+
+  <section id="pricing">
+    <h2>Tarifs</h2>
+    <ul>
+      <li><strong>Montage vidéo :</strong> à partir de ...€ / vidéo</li>
+      <li><strong>Miniature YouTube :</strong> ...€ / miniature</li>
+      <li><strong>Bannière personnalisée :</strong> ...€</li>
+      <li><strong>Photo de profil stylisée :</strong> ...€</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact / Commande</h2>
+    <form action="mailto:contact@frmontage.com" method="POST" enctype="text/plain">
+      <input type="text" name="Nom" placeholder="Ton nom" required>
+      <input type="email" name="Email" placeholder="Ton email" required>
+      <select name="Service" required>
+        <option value="">Choisis un service</option>
+        <option value="Montage vidéo">Montage vidéo</option>
+        <option value="Miniature YouTube">Miniature YouTube</option>
+        <option value="Bannière">Bannière</option>
+        <option value="Photo de profil">Photo de profil</option>
+      </select>
+      <textarea name="Détails" placeholder="Explique ce que tu veux..." rows="5" required></textarea>
+      <button type="submit">Envoyer</button>
+    </form>
+    <p style="margin-top: 10px; font-size: 0.9em;">
+      Ou contacte-moi par mail :
+      <a href="mailto:contact@frmontage.com" style="color: #00ffcc;">contact@frmontage.com</a>
+    </p>
+  </section>
+
+  <footer>
+    &copy; 2025 FR Montage – Tous droits réservés
+  </footer>
+</body>
+</html>
