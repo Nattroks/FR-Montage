@@ -297,21 +297,32 @@
 
   <section id="contact">
     <h2>Contact / Commande</h2>
-    <form action="https://formspree.io/f/TON_CODE" method="POST">
-      <input type="text" name="Nom" placeholder="Ton nom" required>
+    <p style="margin-bottom: 20px; color: #aaffcc;">
+      Remplis ce formulaire pour passer commande rapidement.  
+      Je te réponds sous 24h par mail ! 💬
+    </p>
+
+    <form action="https://formspree.io/f/TON_CODE_ICI" method="POST">
+      <input type="text" name="Nom" placeholder="Ton nom / pseudo" required>
       <input type="email" name="Email" placeholder="Ton email" required>
+      
       <select name="Service" required>
         <option value="">Choisis un service</option>
-        <option value="Montage vidéo">Montage vidéo</option>
-        <option value="Miniature YouTube">Miniature YouTube</option>
-        <option value="Bannière">Bannière</option>
-        <option value="Photo de profil">Photo de profil</option>
+        <option value="Montage vidéo">🎬 Montage vidéo</option>
+        <option value="Miniature YouTube">🖼️ Miniature YouTube</option>
+        <option value="Bannière personnalisée">🎨 Bannière personnalisée</option>
+        <option value="Photo de profil">🧑‍🎨 Photo de profil stylisée</option>
       </select>
-      <textarea name="Détails" placeholder="Explique ce que tu veux..." rows="5" required></textarea>
-      <button type="submit">Envoyer</button>
+
+      <textarea name="Détails" placeholder="Explique ce que tu veux (durée, style, ambiance...)" rows="5" required></textarea>
+
+      <input type="url" name="Lien" placeholder="Lien vers tes fichiers (Drive, WeTransfer...)" />
+
+      <button type="submit">Envoyer ma commande</button>
     </form>
+
     <p style="margin-top: 10px; font-size: 0.9em;">
-      Ou contacte-moi directement :
+      Tu peux aussi me contacter directement :  
       <a href="mailto:contact@frmontage.com" style="color: #00ffcc;">contact@frmontage.com</a>
     </p>
   </section>
@@ -319,6 +330,22 @@
   <footer>
     &copy; 2025 FR Montage – Tous droits réservés
   </footer>
+
+  <script>
+    const form = document.querySelector("form");
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const res = await fetch(form.action, { method: "POST", body: data });
+      if (res.ok) {
+        alert("✅ Merci ! Ton message a bien été envoyé. Je te réponds vite !");
+        form.reset();
+      } else {
+        alert("⚠️ Erreur : vérifie ta connexion ou réessaie plus tard.");
+      }
+    });
+  </script>
 </body>
 </html>
+
 
