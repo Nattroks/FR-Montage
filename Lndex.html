@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FR Montage Animé</title>
+  <title>FR Montage – Montage Vidéo & Visuels pour Créateurs</title>
   <style>
     /* Styles globaux */
     body {
@@ -77,10 +77,13 @@
       text-decoration: none;
       font-weight: bold;
       transition: background 0.3s;
+      box-shadow: 0 0 10px #00ffcc80;
+      animation: glowPulse 2s infinite;
     }
 
     .cta-btn:hover {
       background-color: #00c3a0;
+      color: #fff;
     }
 
     section {
@@ -169,6 +172,8 @@
       border-radius: 5px;
       color: #000;
       cursor: pointer;
+      box-shadow: 0 0 10px #00ffcc80;
+      animation: glowPulse 2s infinite;
     }
 
     button:hover {
@@ -210,6 +215,17 @@
       0%, 100% {text-shadow: 0 0 10px #00ffcc;}
       50% {text-shadow: 0 0 20px #00ffcc;}
     }
+
+    @keyframes glowPulse {
+      0%, 100% { box-shadow: 0 0 8px #00ffcc80; }
+      50% { box-shadow: 0 0 20px #00ffcc; }
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 2em; }
+      .hero h2 { font-size: 1.5em; }
+      .cta-btn { padding: 10px 18px; font-size: 0.95em; }
+    }
   </style>
 </head>
 <body>
@@ -226,8 +242,8 @@
   </nav>
 
   <section class="hero">
-    <h2>🎥 Tu crées du contenue incroyable. Moi je le rend extraordinaire.</h2>
-    <p>Montages, visuels, branding — tout pour booster ton contenu.</p>
+    <h2>🎥 Tu crées du contenu génial — je le transforme en vidéo pro, rapide et percutante.</h2>
+    <p>Montages, visuels, branding — tout ce qu’il faut pour faire briller ton contenu sur les réseaux.</p>
     <a href="#portfolio" class="cta-btn">Voir mes réalisations</a>
   </section>
 
@@ -258,6 +274,12 @@
         <h3>Bannière Personnalisée</h3>
       </div>
     </div>
+
+    <div style="text-align:center; margin-top:20px;">
+      <a href="https://www.tiktok.com/@toncompte" class="cta-btn" target="_blank">
+        Voir mes créations sur TikTok
+      </a>
+    </div>
   </section>
 
   <section id="pricing">
@@ -268,11 +290,14 @@
       <li><strong>Bannière personnalisée :</strong> 3€</li>
       <li><strong>Photo de profil stylisée :</strong> 2€</li>
     </ul>
+    <p style="color:#aaffcc; margin-top:10px;">
+      💬 Tarifs personnalisés selon ton projet. Demande ton devis gratuit dès maintenant !
+    </p>
   </section>
 
   <section id="contact">
     <h2>Contact / Commande</h2>
-    <form action="mailto:contact@frmontage.com" method="POST" enctype="text/plain">
+    <form action="https://formspree.io/f/TON_CODE" method="POST">
       <input type="text" name="Nom" placeholder="Ton nom" required>
       <input type="email" name="Email" placeholder="Ton email" required>
       <select name="Service" required>
@@ -286,7 +311,7 @@
       <button type="submit">Envoyer</button>
     </form>
     <p style="margin-top: 10px; font-size: 0.9em;">
-      Ou contacte-moi par mail :
+      Ou contacte-moi directement :
       <a href="mailto:contact@frmontage.com" style="color: #00ffcc;">contact@frmontage.com</a>
     </p>
   </section>
@@ -296,3 +321,4 @@
   </footer>
 </body>
 </html>
+
